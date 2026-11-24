@@ -10,10 +10,11 @@ app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS;
+const CUSTOM_OBJECT_ID = '2-257152942';
 
 // page d'accueil, liste des livres
 app.get('/', async (req, res) => {
-    const livres = 'https://api.hubapi.com/crm/v3/objects/2-257152942?properties=name,author,genre';
+    const livres = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_ID}?properties=name,author,genre`;
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
@@ -43,7 +44,7 @@ app.post('/update-cobj', async (req, res) => {
         }
     }
 
-    const creerLivre = 'https://api.hubapi.com/crm/v3/objects/2-257152942';
+    const creerLivre = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_ID}`;
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
