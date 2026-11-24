@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Livres
+        a.ajout(href="/update-cobj") Ajouter un livre
+        .cards
+            each livre in data
+                .card
+                    h2 #{livre.properties.name}
+                    p #{livre.properties.author}
+                    p #{livre.properties.genre}

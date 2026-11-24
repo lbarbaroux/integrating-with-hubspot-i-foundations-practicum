@@ -10,6 +10,10 @@ h1 {
     margin: 1rem;
 }
 
+.ajout {
+    margin: 0 1rem;
+}
+
 .cards {
     display: flex;
     align-items: center;
